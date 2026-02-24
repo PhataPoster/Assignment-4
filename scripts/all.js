@@ -1,3 +1,8 @@
+let interviewList =[]
+let rejectedList = []
+
+
+
 document.getElementById("interview-btn1").addEventListener("click", getInterview("interview-btn1", "not-applied-btn1"));
 
 document.getElementById("interview-btn2").addEventListener("click", getInterview("interview-btn2", "not-applied-btn2"));

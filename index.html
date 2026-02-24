@@ -25,7 +25,7 @@
         <div class="card grid grid-cols-1 lg:grid-cols-3 gap-4 mt-6">
             <div class="bg-white p-4 rounded-lg shadow">
                 <h3 class="text-sm">Total</h3>
-                <p id="total-count" class="font-bold text-lg">8</p>
+                <p id="total-count" class="font-bold text-lg">0</p>
             </div>
             <div class="bg-white p-4 rounded-lg shadow">
                 <h3 class="text-sm">Interview</h3>
@@ -45,11 +45,11 @@
         </div>
         <div class="flex flex-col gap-4">
             <div class="button flex gap-3">
-                <button onclick="showOnly('all-jobs')" id="all-btn"
-                    class="btn bg-white text-gray-500 hover:bg-blue-600 hover:text-white">All</button>
-                <button onclick="showOnly('no-jobs')" id="interview-btn"
+                <button onclick="toggleStyle('all-btn')" id="all-btn"
+                    class="btn bg-blue-600 text-white hover:bg-blue-600 hover:text-white">All</button>
+                <button onclick="toggleStyle('interview-btn')" id="interview-btn"
                     class="btn bg-white text-gray-500 hover:bg-blue-600 hover:text-white ">Interview</button>
-                <button onclick="showOnly('no-jobs')" id="reject-btn"
+                <button onclick="toggleStyle('reject-btn')" id="reject-btn"
                     class="btn bg-white text-gray-500 hover:bg-blue-600 hover:text-white ">Reject</button>
             </div>
             <div id="all-jobs" class="job-card flex flex-col gap-4 mb-6">
@@ -352,7 +352,7 @@
         </div>
     </main>
     <script src="scripts/machine.js"></script>
-    <script src="scripts/all.js"></script>
+    <script src="scripts/file.js"></script>
 </body>
 
 </html>
