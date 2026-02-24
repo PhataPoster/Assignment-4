@@ -13,6 +13,7 @@ let rejectBtn = document.getElementById("reject-btn");
 const allJobs = document.getElementById("all-jobs");
 const noJobs = document.getElementById("no-jobs");
 
+
 const mainContainer = document.querySelector("main");
 const filteredSection = document.querySelector(".filtered-section");
 // console.log(mainContainer);
@@ -133,6 +134,17 @@ mainContainer.addEventListener("click", function (event) {
         if(currentStatus == "interview-btn") {
             renderInterviewList();
         }
+
+        calculateCount();
+    }
+
+    if (event.target.classList.contains("delete-btn") || event.target.parentNode.classList.contains("delete-btn")) {
+        const parentNode = event.target.closest(".card-items");
+        const companyName = parentNode.querySelector(".company-name").innerText;
+        parentNode.remove();
+
+        interviewList = interviewList.filter(item => item.companyName !== companyName);
+        rejectedList = rejectedList.filter(item => item.companyName !== companyName);
 
         calculateCount();
     }
