@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+    <header class="header-section max-w-[1100px] mx-auto pt-[60px]">
+        <h1 class="text-2xl font-bold">Job Application Tracker</h1>
+        <div class="card grid grid-cols-1 lg:grid-cols-3 gap-4 mt-6">
+            <div class="bg-white p-4 rounded-lg shadow">
+                <h3 class="text-sm">Total</h3>
+                <p id="total-count" class="font-bold text-lg">8</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow">
+                <h3 class="text-sm">Interview</h3>
+                <p id="interview-count" class="text-green-700 font-bold text-lg">0</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow">
+                <h3 class="text-sm">rejected</h3>
+                <p id="reject-count" class="text-red-700 font-bold text-lg">0</p>
+            </div>
+        </div>
+        <hr class="my-8 opacity-10">
+    </header>
+    <main class="main-section max-w-[1100px] mx-auto">
+        <div class="available-job flex justify-between mb-5">
+            <h3 class="text-1xl font-bold">Available Jobs</h3>
+            <p class="text-sm text-gray-500"><span>8</span> Jobs</p>
+        </div>
+        <div class="flex flex-col gap-4">
+            <div class="button flex gap-3">
+                <button onclick="showOnly('all-jobs')" id="all-btn"
+                    class="btn bg-white text-gray-500 hover:bg-blue-600 hover:text-white">All</button>
+                <button onclick="showOnly('no-jobs')" id="interview-btn"
+                    class="btn bg-white text-gray-500 hover:bg-blue-600 hover:text-white ">Interview</button>
+                <button onclick="showOnly('no-jobs')" id="reject-btn"
+                    class="btn bg-white text-gray-500 hover:bg-blue-600 hover:text-white ">Reject</button>
+            </div>
+            <div id="all-jobs" class="job-card flex flex-col gap-4 mb-6">
+                <div class="flex-col space-y-4 bg-white p-6 rounded-lg shadow">
+                    <div class="flex justify-between">
+                        <div>
+                            <h3 class="font-bold text-1xl">Mobile First Corp</h3>
+                            <p class="text-sm text-gray-500">
+                                React Native developer
+                            </p>
+                        </div>
+
+                        <button class="p-3 rounded-full 
+                         bg-gray-50 
+                         border-[2px] border-gray-200 
+                        flex items-center justify-center 
+                        text-gray-400 
+                        hover:bg-gray-100 
+                        transition"><i class="fa-solid fa-trash-can"></i></button>
+                    </div>
+
+                    <div>
+                        <p class="text-sm text-gray-500">Remote • Full-time • $130,000 - $175,000</p>
+                    </div>
+                    <div class="flex-col gap-2">
+                        <button id="not-applied-btn1" class="text-1xl bg-blue-100 py-1 px-4 rounded-md">NOT APPLIED</button>
+                        <p class="text-sm text-gray-500 mt-2">Build cross-platform mobile applications using React Native.
+                            Work on products used by millions of users worldwide.</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <button id="interview-btn1"
+                            class="bg-white text-green-600 px-4 py-1 rounded-md border-[2px] border-green-600 hover:bg-green-600 hover:text-white ">
+                            INTERVIEW
+                        </button>
+                        <button id="reject-btn1"    
+                            class="bg-white text-red-600 px-4 py-1 rounded-md border-[2px] border-red-600 hover:bg-red-600 hover:text-white">
+                            REJECTED
+                    </div>
+                </div>
+                <div class="flex-col space-y-4 bg-white p-6 rounded-lg shadow">
+                    <div class="flex justify-between">
+                        <div>
+                            <h3 class="font-bold text-1xl">Tech Solutions Inc</h3>
+                            <p class="text-sm text-gray-500">
+                                Frontend Engineer
+                            </p>
+                        </div>
+
+                        <button class="p-3 rounded-full 
+                         bg-gray-50 
+                         border-[2px] border-gray-200 
+                        flex items-center justify-center 
+                        text-gray-400 
+                        hover:bg-gray-100 
+                        transition"><i class="fa-solid fa-trash-can"></i></button>
+                    </div>
+
+                    <div>
+                        <p class="text-sm text-gray-500">On-site • Full-time • $95,000 - $130,000</p>
+                    </div>
+                    <div class="flex-col gap-2">
+                        <button id="not-applied-btn2" class="text-1xl bg-blue-100 py-1 px-4 rounded-md">NOT APPLIED</button>
+                        <p class="text-sm text-gray-500 mt-2">Create engaging user interfaces with React and Vue.js. 
+                            Collaborate with designers and backend teams to deliver pixel-perfect experiences.</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <button id="interview-btn2"
+                            class="bg-white text-green-600 px-4 py-1 rounded-md border-[2px] border-green-600 hover:bg-green-600 hover:text-white ">
+                            INTERVIEW
+                        </button>
+                        <button id="reject-btn2"    
+                            class="bg-white text-red-600 px-4 py-1 rounded-md border-[2px] border-red-600 hover:bg-red-600 hover:text-white">
+                            REJECTED
+                    </div>
+                </div>
+                <div class="flex-col space-y-4 bg-white p-6 rounded-lg shadow">
+                    <div class="flex justify-between">
+                        <div>
+                            <h3 class="font-bold text-1xl">CloudBase Systems</h3>
+                            <p class="text-sm text-gray-500">
+                                Backend Developer
+                            </p>
+                        </div>
+
+                        <button class="p-3 rounded-full 
+                         bg-gray-50 
+                         border-[2px] border-gray-200 
+                        flex items-center justify-center 
+                        text-gray-400 
+                        hover:bg-gray-100 
+                        transition"><i class="fa-solid fa-trash-can"></i></button>
+                    </div>
+
+                    <div>
+                        <p class="text-sm text-gray-500">Remote • Full-time • $110,000 - $150,000</p>
+                    </div>
+                    <div class="flex-col gap-2">
+                        <button id="not-applied-btn3" class="text-1xl bg-blue-100 py-1 px-4 rounded-md">NOT APPLIED</button>
+                        <p class="text-sm text-gray-500 mt-2">Develop scalable backend services using Node.js and Express. 
+                            Design and maintain microservices architecture for cloud platforms.</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <button id="interview-btn3"
+                            class="bg-white text-green-600 px-4 py-1 rounded-md border-[2px] border-green-600 hover:bg-green-600 hover:text-white ">
+                            INTERVIEW
+                        </button>
+                        <button id="reject-btn3"    
+                            class="bg-white text-red-600 px-4 py-1 rounded-md border-[2px] border-red-600 hover:bg-red-600 hover:text-white">
+                            REJECTED
+                    </div>
+                </div>
+                <div class="flex-col space-y-4 bg-white p-6 rounded-lg shadow">
+                    <div class="flex justify-between">
+                        <div>
+                            <h3 class="font-bold text-1xl">DataViz Co</h3>
+                            <p class="text-sm text-gray-500">
+                                Data Scientist
+                            </p>
+                        </div>
+
+                        <button class="p-3 rounded-full 
+                         bg-gray-50 
+                         border-[2px] border-gray-200 
+                        flex items-center justify-center 
+                        text-gray-400 
+                        hover:bg-gray-100 
+                        transition"><i class="fa-solid fa-trash-can"></i></button>
+                    </div>
+
+                    <div>
+                        <p class="text-sm text-gray-500">Hybrid • Full-time • $115,000 - $155,000</p>
+                    </div>
+                    <div class="flex-col gap-2">
+                        <button id="not-applied-btn4" class="text-1xl bg-blue-100 py-1 px-4 rounded-md">NOT APPLIED</button>
+                        <p class="text-sm text-gray-500 mt-2">Analyze large datasets and build ML models for predictive analytics. 
+                            Work with Python, TensorFlow, and BigQuery to drive business insights.</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <button id="interview-btn4"
+                            class="bg-white text-green-600 px-4 py-1 rounded-md border-[2px] border-green-600 hover:bg-green-600 hover:text-white ">
+                            INTERVIEW
+                        </button>
+                        <button id="reject-btn4"    
+                            class="bg-white text-red-600 px-4 py-1 rounded-md border-[2px] border-red-600 hover:bg-red-600 hover:text-white">
+                            REJECTED
+                    </div>
+                </div>
+                <div class="flex-col space-y-4 bg-white p-6 rounded-lg shadow">
+                    <div class="flex justify-between">
+                        <div>
+                            <h3 class="font-bold text-1xl">FinanceHub Solutions</h3>
+                            <p class="text-sm text-gray-500">
+                                Full Stack Developer
+                            </p>
+                        </div>
+
+                        <button class="p-3 rounded-full 
+                         bg-gray-50 
+                         border-[2px] border-gray-200 
+                        flex items-center justify-center 
+                        text-gray-400 
+                        hover:bg-gray-100 
+                        transition"><i class="fa-solid fa-trash-can"></i></button>
+                    </div>
+
+                    <div>
+                        <p class="text-sm text-gray-500">On-site • Full-time • $100,000 - $140,000</p>
+                    </div>
+                    <div class="flex-col gap-2">
+                        <button id="not-applied-btn5" class="text-1xl bg-blue-100 py-1 px-4 rounded-md">NOT APPLIED</button>
+                        <p class="text-sm text-gray-500 mt-2">Build fintech platforms using React and Java. Work with financial APIs and ensure secure transactions for millions of users.</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <button id="interview-btn5"
+                            class="bg-white text-green-600 px-4 py-1 rounded-md border-[2px] border-green-600 hover:bg-green-600 hover:text-white ">
+                            INTERVIEW
+                        </button>
+                        <button id="reject-btn5"    
+                            class="bg-white text-red-600 px-4 py-1 rounded-md border-[2px] border-red-600 hover:bg-red-600 hover:text-white">
+                            REJECTED
+                    </div>
+                </div>
+                <div class="flex-col space-y-4 bg-white p-6 rounded-lg shadow">
+                    <div class="flex justify-between">
+                        <div>
+                            <h3 class="font-bold text-1xl">AI Research Labs</h3>
+                            <p class="text-sm text-gray-500">
+                                Machine Learning Engineer
+                            </p>
+                        </div>
+
+                        <button class="p-3 rounded-full 
+                         bg-gray-50 
+                         border-[2px] border-gray-200 
+                        flex items-center justify-center 
+                        text-gray-400 
+                        hover:bg-gray-100 
+                        transition"><i class="fa-solid fa-trash-can"></i></button>
+                    </div>
+
+                    <div>
+                        <p class="text-sm text-gray-500">Remote • Full-time • $135,000 - $190,000</p>
+                    </div>
+                    <div class="flex-col gap-2">
+                        <button id="not-applied-btn6" class="text-1xl bg-blue-100 py-1 px-4 rounded-md">NOT APPLIED</button>
+                        <p class="text-sm text-gray-500">Develop cutting-edge AI models using PyTorch and TensorFlow. Research and implement state-of-the-art machine learning algorithms.</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <button id="interview-btn6"
+                            class="bg-white text-green-600 px-4 py-1 rounded-md border-[2px] border-green-600 hover:bg-green-600 hover:text-white transition">
+                            INTERVIEW
+                        </button>
+                        <button id="reject-btn6"    
+                            class="bg-white text-red-600 px-4 py-1 rounded-md border-[2px] border-red-600 hover:bg-red-600 hover:text-white transition">
+                            REJECTED
+                    </div>
+                </div>
+                <div class="flex-col space-y-4 bg-white p-6 rounded-lg shadow">
+                    <div class="flex justify-between">
+                        <div>
+                            <h3 class="font-bold text-1xl">GreenTech Industries</h3>
+                            <p class="text-sm text-gray-500">
+                                DevOps Engineer
+                            </p>
+                        </div>
+
+                        <button class="p-3 rounded-full 
+                         bg-gray-50 
+                         border-[2px] border-gray-200 
+                        flex items-center justify-center 
+                        text-gray-400 
+                        hover:bg-gray-100 
+                        transition"><i class="fa-solid fa-trash-can"></i></button>
+                    </div>
+
+                    <div>
+                        <p class="text-sm text-gray-500">Remote • Full-time • $105,000 - $145,000</p>
+                    </div>
+                    <div class="flex-col gap-2">
+                        <button id="not-applied-btn7" class="text-1xl bg-blue-100 py-1 px-4 rounded-md">NOT APPLIED</button>
+                        <p class="text-sm text-gray-500 mt-2">Manage cloud infrastructure using Kubernetes and Docker. Deploy and maintain scalable applications on AWS and GCP.</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <button id="interview-btn7"
+                            class="bg-white text-green-600 px-4 py-1 rounded-md border-[2px] border-green-600 hover:bg-green-600 hover:text-white transition">
+                            INTERVIEW
+                        </button>
+                        <button id="reject-btn7"    
+                            class="bg-white text-red-600 px-4 py-1 rounded-md border-[2px] border-red-600 hover:bg-red-600 hover:text-white transition">
+                            REJECTED
+                    </div>
+                </div>
+                <div class="flex-col space-y-4 bg-white p-6 rounded-lg shadow">
+                    <div class="flex justify-between">
+                        <div>
+                            <h3 class="font-bold text-1xl">WebFlow Studio</h3>
+                            <p class="text-sm text-gray-500">
+                                UI/UX Designer
+                            </p>
+                        </div>
+
+                        <button class="p-3 rounded-full 
+                         bg-gray-50 
+                         border-[2px] border-gray-200 
+                        flex items-center justify-center 
+                        text-gray-400 
+                        hover:bg-gray-100 
+                        transition"><i class="fa-solid fa-trash-can"></i></button>
+                    </div>
+
+                    <div>
+                        <p class="text-sm text-gray-500">Hybrid • Full-time • $85,000 - $120,000</p>
+                    </div>
+                    <div class="flex-col gap-2">
+                        <button id="not-applied-btn8" class="text-1xl bg-blue-100 py-1 px-4 rounded-md">NOT APPLIED</button>
+                        <p class="text-sm text-gray-500 mt-2">Design intuitive user interfaces using Figma and Adobe XD. Create wireframes, prototypes, and high-fidelity designs for web and mobile apps.</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <button id="interview-btn8"
+                            class="bg-white text-green-600 px-4 py-1 rounded-md border-[2px] border-green-600 hover:bg-green-600 hover:text-white">
+                            INTERVIEW
+                        </button>
+                        <button id="reject-btn8"
+                            class="bg-white text-red-600 px-4 py-1 rounded-md border-[2px] border-red-600 hover:bg-red-600 hover:text-white ">
+                            REJECTED
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="no-jobs" class="hidden">
+            <div class="flex flex-col justify-center items-center py-[120px] gap-4">
+                <img src="./B13-A4-PH-Job-Tracker-main/B13-A4-PH-Job-Tracker-main/jobs.png" alt="">
+                <div class="flex flex-col justify-center items-center gap-1">
+                    <h2 class="text-2xl font-bold">No Jobs Available</h2>
+                    <p class="text-sm text-gray-500">Check back soon for new job opportunities</p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <script src="scripts/machine.js"></script>
+    <script src="scripts/all.js"></script>
+</body>
+
+</html>
