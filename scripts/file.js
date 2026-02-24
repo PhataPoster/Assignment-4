@@ -39,7 +39,12 @@ function toggleStyle(id) {
 
     const button = document.getElementById(id);
     button.classList.remove("bg-white", "text-gray-500");
-    button.classList.add("bg-blue-600", "text-white");
+    button.classList.add("bg-blue-600", "text-white");  
+    
+    if(interviewList.length == 0 && rejectedList.length == 0) {
+        allJobs.classList.add("hidden");
+        noJobs.classList.remove("hidden");
+    }
 
     if (id == "interview-btn") {
         allJobs.classList.add("hidden");
