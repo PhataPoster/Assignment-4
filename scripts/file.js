@@ -61,7 +61,7 @@ function toggleStyle(id) {
         renderRejectedList()
         rejectedJobsCount()
     }
-    if(interviewList.length == 0 && rejectedList.length == 0) {
+    if(interviewList.length == 0 || rejectedList.length == 0) {
         allJobs.classList.add("hidden");
         noJobs.classList.remove("hidden");
         if(id == "all-btn") {
