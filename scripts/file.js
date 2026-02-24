@@ -12,6 +12,7 @@ let rejectBtn = document.getElementById("reject-btn");
 
 const allJobs = document.getElementById("all-jobs");
 const noJobs = document.getElementById("no-jobs");
+const availableJobs = document.querySelector(".available-jobs");
 
 
 const mainContainer = document.querySelector("main");
@@ -22,7 +23,7 @@ function calculateCount() {
     totalCount.innerText = allJobs.children.length;
     interviewCount.innerText = interviewList.length;
     rejectedCount.innerText = rejectedList.length;
-
+    availableJobs.innerText = allJobs.children.length;
 }
 
 calculateCount()
@@ -51,16 +52,19 @@ function toggleStyle(id) {
         allJobs.classList.add("hidden");
         filteredSection.classList.remove("hidden");
         renderInterviewList()
-        
+
+        interviewJobsCount();
     }
     else if (id == "all-btn") {
         allJobs.classList.remove("hidden");
         filteredSection.classList.add("hidden");
+        allJobsCount();
     }
     else if (id == "reject-btn") {
         allJobs.classList.add("hidden");
         filteredSection.classList.remove("hidden");
         renderRejectedList()
+        rejectedJobsCount()
     }
 
 
@@ -242,4 +246,18 @@ function renderRejectedList() {
         filteredSection.appendChild(div);
     }
 }
+
+function interviewJobsCount() {
+    availableJobs.innerHTML =`${interviewList.length} of ${allJobs.children.length}`
+    ;
+}
+function rejectedJobsCount() {
+    availableJobs.innerHTML =`${rejectedList.length} of ${allJobs.children.length}`
+    ;
+}
+function allJobsCount() {
+    availableJobs.innerHTML =`${allJobs.children.length}`
+    ;
+}
+
 
