@@ -164,7 +164,7 @@ function renderInterviewList() {
         const div = document.createElement("div");
         div.classList.add("flex", "flex-col", "gap-4", "mb-6");
         div.innerHTML = `
-            <div class="flex-col space-y-4 bg-white p-6 rounded-lg shadow">
+            <div class="card-items flex-col space-y-4 bg-white p-6 rounded-lg shadow">
                     <div class="flex justify-between">
                         <div>
                             <h3 class="company-name font-bold text-1xl">${interview.companyName}</h3>
@@ -173,7 +173,7 @@ function renderInterviewList() {
                             </p>
                         </div>
 
-                        <button class="p-3 rounded-full 
+                        <button class="delete-btn p-3 rounded-full 
                          bg-gray-50 
                          border-[2px] border-gray-200 
                         flex items-center justify-center 
@@ -210,7 +210,7 @@ function renderRejectedList() {
         const div = document.createElement("div");
         div.classList.add("flex", "flex-col", "gap-4", "mb-6");
         div.innerHTML = `
-            <div class="flex-col space-y-4 bg-white p-6 rounded-lg shadow">
+            <div class="card-items flex-col space-y-4 bg-white p-6 rounded-lg shadow">
                     <div class="flex justify-between">
                         <div>
                             <h3 class="company-name font-bold text-1xl">${rejected.companyName}</h3>
@@ -219,7 +219,7 @@ function renderRejectedList() {
                             </p>
                         </div>
 
-                        <button class="p-3 rounded-full 
+                        <button class="delete-btn p-3 rounded-full 
                          bg-gray-50 
                          border-[2px] border-gray-200 
                         flex items-center justify-center 
